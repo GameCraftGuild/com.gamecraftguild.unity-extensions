@@ -129,8 +129,3 @@ __pycache__/
 # 	Project-specific rules
 # =========================================================================== #
 
-# ===== DELETE when ready to work on Unity project and embedded package ===== #
-UserSettings/
-ProjectSettings/
-**/*.meta
-# ===== DELETE when ready to work on Unity project and embedded package ===== #
