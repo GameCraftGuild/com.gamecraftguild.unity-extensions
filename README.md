@@ -1,4 +1,4 @@
 # Unity Extensions package
 
-Useful common exentsions of Unity library classes.
+Useful common extensions of Unity library classes.
 
