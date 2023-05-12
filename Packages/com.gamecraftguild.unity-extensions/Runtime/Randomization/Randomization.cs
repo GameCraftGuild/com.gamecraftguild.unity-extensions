@@ -6,61 +6,62 @@ namespace GameCraftGuild.UnityExtensions.Randomization {
     /// <summary>
     /// Class for generating random numbers.
     /// </summary>
-    public class Randomization : MonoBehaviour {
-
-        /// <summary>
-        /// Random number generator.
-        /// </summary>
-        private static System.Random r = new System.Random();
-
-        /// <summary>
-        /// Generates a random integer between min (inclusive) and max (exclusive).
-        /// </summary>
-        /// <returns>The integer.</returns>
-        /// <param name="min">Minimum value (inclusive).</param>
-        /// <param name="max">Maximum value (exclusive).</param>
-        public static int RandomInt (int min, int max) { //Min is inclusive, Max is exclusive
-            return r.Next(min, max);
-        }
-
-        /// <summary>
-        /// Return a float between min (inclusive) and max (exclusive).
-        /// </summary>
-        /// <param name="min">Mimimum value (inclusive).</param>
-        /// <param name="max">Maximum value (exclusive).</param>
-        /// <returns></returns>
-        public static float RandomFloat (float min, float max) {
-            return (float)r.NextDouble() * (max - min) + min;
-        }
-
-        /// <summary>
-        /// Generates a random boolean value.
-        /// </summary>
-        /// <returns>The boolean.</returns>
-        public static bool RandomBool () {
-            return (r.Next(0, 2) == 0 ? true : false); // Possible values are 0 and 1; generation is inclusive for lower bounds, exclusive for upper.
-        }
+    public class Randomization {
 
         /// <summary>
         /// Return a Vector2 between the two Vector2s.
         /// </summary>
         /// <param name="min">Minimum values (inclusive).</param>
-        /// <param name="max">Maximum values (exclusive).</param>
+        /// <param name="max">Maximum values (inclusive).</param>
         /// <returns>Created Vector2.</returns>
         public static Vector2 RandomVector2 (Vector2 min, Vector2 max) {
-            return new Vector2(RandomFloat(min.x, max.x), RandomFloat(min.y, max.y));
+            return new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
         }
 
         /// <summary>
         /// Return a Vector2 with values within the given ranges.
         /// </summary>
         /// <param name="minX">Mimimum x value (inclusive).</param>
-        /// <param name="maxX">Maximum x value (exclusive).</param>
+        /// <param name="maxX">Maximum x value (inclusive).</param>
         /// <param name="minY">Mimimum y value (inclusive).</param>
-        /// <param name="maxY">Maximum y value (exclusive).</param>
+        /// <param name="maxY">Maximum y value (inclusive).</param>
         /// <returns>Created Vector2.</returns>
         public static Vector2 RandomVector2 (float minX, float maxX, float minY, float maxY) {
-            return new Vector2(RandomFloat(minX, maxX), RandomFloat(minY, maxY));
+            return new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        }
+
+        /// <summary>
+        /// Return a random Color with an alpha of 1.
+        /// </summary>
+        /// <returns>A random Color.</returns>
+        public static Color RandomColor () {
+            return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        }
+
+        /// <summary>
+        /// Return a random Color with a random alpha value.
+        /// </summary>
+        /// <returns>A random Color.</returns>
+        public static Color RandoColorAlpha () {
+            return new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        }
+
+        /// <summary>
+        /// Return a random greyscale Color (r == g == b) with an alpha of 1.
+        /// </summary>
+        /// <returns>A random greyscale Color.</returns>
+        public static Color RandomGreyscale () {
+            float value = Random.Range(0f, 1f);
+            return new Color(value, value, value);
+        }
+
+        /// <summary>
+        /// Return a random greyscale Color (r == g == b) with a random alpha.
+        /// </summary>
+        /// <returns>A random greyscale Color.</returns>
+        public static Color RandomGreyscaleAlpha () {
+            float value = Random.Range(0f, 1f);
+            return new Color(value, value, value, Random.Range(0f, 1f));
         }
 
     }
