@@ -1,6 +1,6 @@
 {
   "name": "com.gamecraftguild.unity-extensions",
-  "version": "0.0.1-preview",
+  "version": "0.1.0-preview",
   "displayName": "GameCraftGuild - Unity Extensions",
   "description": "A UPM package with some useful extensions to Unity3d Engine's base classes.",
   "unity": "2022.2",
