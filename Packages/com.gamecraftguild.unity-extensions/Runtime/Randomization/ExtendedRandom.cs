@@ -97,7 +97,7 @@ namespace GameCraftGuild.UnityExtensions.Randomization
         }
 
         /// <summary>
-        /// Return a random Color within the given ranges with an alpha of 1.
+        /// Return a random Color within the given ranges.
         /// </summary>
         /// <param name="min">Min values for the color. (inclusive)</param>
         /// <param name="max">Max values for the color. (inclusive)</param>
