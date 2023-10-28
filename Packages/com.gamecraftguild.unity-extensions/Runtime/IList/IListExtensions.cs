@@ -48,8 +48,7 @@ namespace GameCraftGuild.UnityExtensions.IList {
             int resultIndex = 0;
 
             while (resultIndex < list.Count && resultValue >= weights[resultIndex]) {
-                if (weights[resultIndex] <= 0) continue;
-                resultValue -= weights[resultIndex];
+                if (!weights[resultIndex] <= 0) resultValue -= weights[resultIndex];
                 resultIndex++;
             }
 
