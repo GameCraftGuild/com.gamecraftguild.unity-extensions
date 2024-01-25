@@ -38,14 +38,17 @@ namespace GameCraftGuild.UnityExtensions.IList {
 
             int totalWeight = 0;
             for (int index = 0; index < weights.Count; index++) {
+                if (weights[index] <=0) continue;
                 totalWeight += weights[index];
             }
 
+            if (totalWeight == 0) return default(T);
+            
             int resultValue = Random.Range(0, totalWeight);
             int resultIndex = 0;
 
             while (resultIndex < list.Count && resultValue >= weights[resultIndex]) {
-                resultValue -= weights[resultIndex];
+                if (!weights[resultIndex] <= 0) resultValue -= weights[resultIndex];
                 resultIndex++;
             }
 
